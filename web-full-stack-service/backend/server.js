@@ -8,13 +8,13 @@ const PORT = 3000;
 
 app.use(bodyParser.json());
 
-db.pool.query(`CREATE TABLE lists (
-  id INTEGER AUTO_INCREMENT,
-  value TEXT,
-  PRIMARY KEY (id)
-)`, (err, results, fields) => {
-  console.log('table create results : ', results);
-});
+// db.pool.query(`CREATE TABLE lists (
+//   id INTEGER AUTO_INCREMENT,
+//   value TEXT,
+//   PRIMARY KEY (id)
+// )`, (err, results, fields) => {
+//   console.log('table create results : ', results);
+// });
 
 app.get('/api/values', (req, res, next) => {
   db.pool.query('SELECT * FROM lists;', (err, results, fields) => {
